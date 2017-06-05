@@ -1,2 +1,1 @@
-# save_dir
-trigger_topic_name: /trigger
+trigger_topic_name: "/trigger"

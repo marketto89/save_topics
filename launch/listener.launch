@@ -1,0 +1,7 @@
+<launch>
+	<rosparam file="$(find save_topics)/conf/parameters.yaml" command="load" />
+	<node name="$(env ROS_PC_NAME)_listener" type="listener.py" pkg="save_topics" output="screen">
+		<param name="save_folder" value="/home/$(env USER)/workspace" />
+	</node>
+
+</launch>
