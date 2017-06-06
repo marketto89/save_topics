@@ -1,7 +1,15 @@
 <launch>
+	
+	<arg name="topic_prefix" default="kinect_master" />
+	<arg name="save_folder" value="/home/$(env USER)/workspace" />
+
+	<param name="save_folder" value="$(arg save_folder)" />
 	<rosparam file="$(find save_topics)/conf/parameters.yaml" command="load" />
 	<node name="$(env ROS_PC_NAME)_listener" type="listener.py" pkg="save_topics" output="screen">
-		<param name="save_folder" value="/home/$(env USER)/workspace" />
+		<remap to="/$(arg topic_prefix)/rgb_lowres/image" from="rgb" />
+		<remap to="/$(arg topic_prefix)/depth_lowres/image" from="depth" />
+		<remap to="/$(arg topic_prefix)/rgb_lowres/camera_info" from="rgb_info" />
+		<remap to="/$(arg topic_prefix)/depth_lowres/camera_info" from="depth_info" />
 	</node>
 
 </launch>

@@ -1,5 +1,6 @@
 trigger_topic_name: "/trigger"
-rgb_topic_name: "/kinect2_head/rgb/image"
-depth_topic_name: "/kinect2_head/depth/image"
-rgb_info_topic_name: "/kinect2_head/rgb/camera_info"
-depth_info_topic_name: "/kinect2_head/depth/camera_info"
+callbacks_to_save: 10
+# rgb_topic_name: "/kinect2_head/rgb_lowres/image"
+# depth_topic_name: "/kinect2_head/depth_lowres/image"
+# rgb_info_topic_name: "/kinect2_head/rgb_lowres/camera_info"
+# depth_info_topic_name: "/kinect2_head/depth_lowres/camera_info"
