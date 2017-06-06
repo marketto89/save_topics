@@ -1,7 +1,7 @@
 <launch>
 	
 	<arg name="topic_prefix" default="kinect_master" />
-	<arg name="save_folder" value="/home/$(env USER)/workspace" />
+	<arg name="save_folder" value="/home/$(env USER)/Desktop/BPR_Dataset" />
 
 	<param name="save_folder" value="$(arg save_folder)" />
 	<rosparam file="$(find save_topics)/conf/parameters.yaml" command="load" />
