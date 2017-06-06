@@ -23,7 +23,7 @@ def trigger_callback(data):
   global global_id
   enabled = True
   person_id = rospy.get_param("/person_id", 0)
-  # global_id = rospy.get_param("/global_id", 0)
+  global_id = rospy.get_param("/global_id", 0)
   print("Triggered! person_id: ", person_id, " global_id: ", global_id)
 
 def sensor_callback(rgb, depth, rgb_info, depth_info):
@@ -50,6 +50,8 @@ def sensor_callback(rgb, depth, rgb_info, depth_info):
     if callback_id == callbacks_per_trigger:
       callback_id = 0
       enabled = False
+      rospy.set_param("/global_id", global_id)
+  
 
 def listener():
   global callbacks_per_trigger
